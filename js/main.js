@@ -15,7 +15,7 @@ function animate() {
     ctx.save();
     ctx.translate(0, -car.y + canvas.height*0.7);
 
-    road.draw(ctx);
+    road.draw(ctx, car);
     car.draw(ctx);
 
     ctx.restore();

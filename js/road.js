@@ -26,7 +26,7 @@ class Road {
         return this.left + laneWidth/2 + Math.min(laneIndex, this.laneCount - 1)*laneWidth;
     }
 
-    draw(ctx) {
+    draw(ctx, car) {
         ctx.lineWidth = 5;
         ctx.strokeStyle = "white";
 
@@ -38,6 +38,7 @@ class Road {
             );
 
             ctx.setLineDash([20, 20]);
+            ctx.lineDashOffset = car.y * 0.8;
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
